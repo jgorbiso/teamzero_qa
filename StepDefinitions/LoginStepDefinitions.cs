@@ -1,7 +1,6 @@
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-using System.Xml.Linq;
 using TMZR_QA.Pages;
 
 namespace TMZR_QA.StepDefinitions
@@ -27,19 +26,14 @@ namespace TMZR_QA.StepDefinitions
         [Given(@"User is the login page")]
         public void GivenUserIsTheLoginPage()
         {
-            driver.Navigate().GoToUrl("http://localhost:3000/login");
+            // Modify this once environment is already available
+            loginPage.navigateToLoginPage();
         }
 
-        [When(@"User enter a valid email '([^']*)'")]
-        public void WhenUserEnterAValidEmail(string email)
+        [When(@"User enter '([^']*)' value in Login Page '([^']*)' text field")]
+        public void WhenUserEntersValueInLoginPageTextField(string value, string fieldName)
         {
-            loginPage.inputEmail(email);
-        }
-
-        [When(@"User enter a valid password '([^']*)'")]
-        public void WhenUserEnterAValidPassword(string password)
-        {
-            loginPage.inputPassword(password);
+            loginPage.inputText(fieldName, value);
         }
 
         [When(@"User clicks the login button")]
@@ -54,10 +48,22 @@ namespace TMZR_QA.StepDefinitions
             homePage.userIsLoggedIn();
         }
 
-        [Then(@"An error alert message should appear")]
-        public void ThenAnErrorAlertMessageShouldAppear()
+        [Then(@"Field validation '([^']*)' should appear for Login Page '([^']*)' field")]
+        public void ThenFieldValidationShouldAppearForLoginPageField(string message, string field)
         {
-            loginPage.alertErrorMessageDisplayed();
+            loginPage.fieldValidationMessageDisplayed(message, field);
+        }
+
+        [Then(@"Login Form validation alert '([^']*)' should appear")]
+        public void ThenLoginFormValidationAlertShouldAppear(string message)
+        {
+            loginPage.formValidationMessageDisplayed(message);
+        }
+
+        [Then(@"User is redirected to Login Page '([^']*)'")]
+        public void ThenUserIsRedirectedToLoginPage(string expectedUrl)
+        {
+            loginPage.redirectUserToLoginPage(expectedUrl);
         }
 
     }

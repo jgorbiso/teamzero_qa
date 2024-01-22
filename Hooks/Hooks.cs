@@ -23,10 +23,16 @@ namespace TMZR_QA.Hooks
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario()
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-
+            var options = new ChromeOptions();
+            //options.AddArgument("--headless=new");
+            IWebDriver driver = new ChromeDriver(options);
             _container.RegisterInstanceAs(driver);
+        }
+
+        [BeforeStep] public void FirstStep()
+        {
+            var driver = _container.Resolve<IWebDriver>();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [AfterScenario]
@@ -37,9 +43,10 @@ namespace TMZR_QA.Hooks
             // if dirver is open, then close it
             if (driver != null)
             {
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                driver.Close();
                 driver.Quit();
             }
         }
+
     }
 }
