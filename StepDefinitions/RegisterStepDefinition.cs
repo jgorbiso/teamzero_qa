@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions.Equivalency;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+using OpenQA.Selenium;
 using TMZR_QA.Pages;
 
 namespace TMZR_QA.StepDefinitions
@@ -18,7 +20,7 @@ namespace TMZR_QA.StepDefinitions
         [Given(@"User is the register page")]
         public void GivenUserIsTheRegisterPage()
         {
-            driver.Navigate().GoToUrl("http://localhost:3000/register");
+            registerPage.navigateToRegisterPage();
         }
 
         [When(@"User enter '(.*)' value in Register Page '(.*)' text field")]
@@ -45,16 +47,11 @@ namespace TMZR_QA.StepDefinitions
             
         }
 
-        [Then(@"Field validation '([^']*)' should appear for Register Page '([^']*)' field")]
-        public void ThenFieldValidationShouldAppearForRegisterPageField(string message, string fieldName)
-        {
-            throw new PendingStepException();
-        }
 
-        [Then(@"Register Form validation alert '([^']*)' should appear")]
-        public void ThenLoginFormValidationAlertShouldAppear(string message)
+        [Then(@"field validation '([^']*)' should appear for Register Page '([^']*)' field")]
+        public void ThenFieldValidationShouldAppearForRegisterPageField(string message, string field)
         {
-            registerPage.formValidationMessageDisplayed(message);
+            registerPage.fieldValidationMessageDisplayed(message, field);
         }
 
     }

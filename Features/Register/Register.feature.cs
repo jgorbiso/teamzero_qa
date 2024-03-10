@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("User enter \'teamzero_{0}\' value in Register Page \'username\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.And("User enter \'tz-def-{0}@g.com\' value in Register Page \'email\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enter \'tz-def-{0}@mailinator.com\' value in Register Page \'email\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
  testRunner.And("User enter \'Passw0rd\' value in Register Page \'password\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User enter \'Passw0rd\' value in Register Page \'confirmPassword\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.And("User selects a \'en\' option in language droplist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects a \'fil\' option in language droplist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.And("User clicks the register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("User successully registers an account with message \'Registration Success\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
- testRunner.And("User is redirected to Login Page \'http://localhost:3000/login\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User is redirected to Login Page \'https://teamzeroweb.azurewebsites.net/login\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

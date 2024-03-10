@@ -76,7 +76,7 @@ namespace TMZR_QA.Features.Common
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login Page - Form validation")]
         [NUnit.Framework.CategoryAttribute("login")]
-        [NUnit.Framework.TestCaseAttribute("tz-def-06@g.com", "123", "Password is incorrect", null)]
+        [NUnit.Framework.TestCaseAttribute("tz-def-01@mailinator.com", "123", "Password is incorrect", null)]
         [NUnit.Framework.TestCaseAttribute("tz-def@g.com", "123", "Account does not exist", null)]
         public virtual void LoginPage_FormValidation(string email, string password, string message, string[] exampleTags)
         {
@@ -134,8 +134,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Register Page - Form validation")]
         [NUnit.Framework.CategoryAttribute("register")]
-        [NUnit.Framework.TestCaseAttribute("teamzero_06", "tz-def{0}@g.com", "P@ssw0rd", "P@ssw0rd", "en", "Username not available", null)]
-        [NUnit.Framework.TestCaseAttribute("teamzero_{0}", "TZ_def_06@g.com", "P@ssw0rd", "P@ssw0rd", "fl", "The email address you entered is already in use", null)]
+        [NUnit.Framework.TestCaseAttribute("teamzero_06", "tz-def{0}@mailinator.com", "P@ssw0rd", "P@ssw0rd", "en", "Username not available", null)]
+        [NUnit.Framework.TestCaseAttribute("teamzero_{0}", "tz-def-01@mailinator.com", "P@ssw0rd", "P@ssw0rd", "fil", "The email address you entered is already in use", null)]
         public virtual void RegisterPage_FormValidation(string username, string email, string password, string confirmPassword, string language, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {

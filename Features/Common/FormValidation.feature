@@ -9,7 +9,7 @@ Scenario Outline: Login Page - Form validation
 	Then Login Form validation alert '<message>' should appear
 Examples:
 	| email           | password | message                |
-	| tz-def-06@g.com | 123      | Password is incorrect  |
+	| tz-def-01@mailinator.com | 123      | Password is incorrect  |
 	| tz-def@g.com    | 123      | Account does not exist |
 
 @register
@@ -24,5 +24,5 @@ Scenario Outline: Register Page - Form validation
 	Then Register Form validation alert '<message>' should appear
 Examples:
 	| username     | email           | password | confirmPassword | language | message                                         |
-	| teamzero_06  | tz-def{0}@g.com | P@ssw0rd | P@ssw0rd        | en       | Username not available                          |
-	| teamzero_{0} | TZ_def_06@g.com | P@ssw0rd | P@ssw0rd        | fl      | The email address you entered is already in use |
+	| teamzero_06  | tz-def{0}@mailinator.com | P@ssw0rd | P@ssw0rd        | en       | Username not available                          |
+	| teamzero_{0} | tz-def-01@mailinator.com | P@ssw0rd | P@ssw0rd        | fil       | The email address you entered is already in use |

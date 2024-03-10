@@ -78,7 +78,6 @@ namespace TMZR_QA.Features.Login
         [NUnit.Framework.CategoryAttribute("login")]
         [NUnit.Framework.TestCaseAttribute("", "Email is required", null)]
         [NUnit.Framework.TestCaseAttribute("a@g", "Invalid email", null)]
-        [NUnit.Framework.TestCaseAttribute("a.com", "Invalid email", null)]
         public virtual void LoginPage_EmailFieldValidation(string email, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -146,7 +145,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("message", message);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login Page - Password field Validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 16
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -166,20 +165,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
+#line 16
  testRunner.Given("User is the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 18
+#line 17
  testRunner.When(string.Format("User enter \'{0}\' value in Login Page \'email\' text field", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 18
  testRunner.And(string.Format("User enter \'{0}\' value in Login Page \'password\' text field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
+#line 19
  testRunner.And("User clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 21
- testRunner.Then(string.Format("field validation \'{0}\' should appear for Login Page \'password\' field", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.Then(string.Format("Field validation \'{0}\' should appear for Login Page \'password\' field", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

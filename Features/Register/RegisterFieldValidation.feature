@@ -5,12 +5,12 @@ Scenario Outline: Register Page - Email Field Validation
 	Given User is the register page
 	When User enter '<email>' value in Register Page 'email' text field
 	And User clicks the register button
-	Then field validation '<message>' should appear for Register Page 'Email' field
+	Then field validation '<message>' should appear for Register Page 'email' field
 Examples:
 	| email | message       |
-	|       | Invalid email |
-	| a@g   | Invalid email |
-	| a.com | Invalid email |
+	|       | Invalid email address |
+	| a@g   | Invalid email address |
+	| a.com | Invalid email address |
 
 @register
 Scenario Outline: Register Page - Username Field Validation

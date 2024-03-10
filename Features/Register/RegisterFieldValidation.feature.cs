@@ -76,9 +76,9 @@ namespace TMZR_QA.Features.Register
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Register Page - Email Field Validation")]
         [NUnit.Framework.CategoryAttribute("register")]
-        [NUnit.Framework.TestCaseAttribute("", "Invalid email", null)]
-        [NUnit.Framework.TestCaseAttribute("a@g", "Invalid email", null)]
-        [NUnit.Framework.TestCaseAttribute("a.com", "Invalid email", null)]
+        [NUnit.Framework.TestCaseAttribute("", "Invalid email address", null)]
+        [NUnit.Framework.TestCaseAttribute("a@g", "Invalid email address", null)]
+        [NUnit.Framework.TestCaseAttribute("a.com", "Invalid email address", null)]
         public virtual void RegisterPage_EmailFieldValidation(string email, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -122,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks the register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
- testRunner.Then(string.Format("field validation \'{0}\' should appear for Register Page \'Email\' field", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("field validation \'{0}\' should appear for Register Page \'email\' field", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

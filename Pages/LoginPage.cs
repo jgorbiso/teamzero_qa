@@ -23,7 +23,7 @@ namespace TMZR_QA.Pages
 
         public void navigateToLoginPage()
         {
-            driver.Navigate().GoToUrl("http://localhost:3000/login");
+            driver.Navigate().GoToUrl("https://teamzeroweb.azurewebsites.net/login");
         }
 
         /// <summary>
@@ -33,11 +33,13 @@ namespace TMZR_QA.Pages
         /// <param name="value"></param>
         public void inputText(string fieldName, string text)
         {
-            driver.FindElement(By.XPath($"//*[@data-testid='{fieldName}']")).SendKeys(text);
+            IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath($"//*[@data-testid='{fieldName}']")));
+            element.Click();
+            element.SendKeys(text);
         }
-
         public void clickOnSubmitButton()
         {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(loginButton).Click();
         }
 

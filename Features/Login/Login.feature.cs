@@ -106,7 +106,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("User is the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("User enter \'tz-def-06@g.com\' value in Login Page \'email\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enter \'tz-def-01@mailinator.com\' value in Login Page \'email\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.And("User enter \'P@ssw0rd\' value in Login Page \'password\' text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

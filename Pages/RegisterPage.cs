@@ -16,13 +16,18 @@ namespace TMZR_QA.Pages
             this.driver = driver;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             Random rnd = new Random();
-            num = rnd.Next(24, 100);
+            num = rnd.Next(24, 200);
         }
 
         // Web Element Locators
         string registerForm = "//*[@data-testid='registerForm']";
         By registerButton = By.CssSelector("button[type='submit']");
         By alert = By.XPath("//li[@role='status']");
+
+        public void navigateToRegisterPage()
+        {
+            driver.Navigate().GoToUrl("https://teamzeroweb.azurewebsites.net/register");
+        }
 
         public void inputText(string fieldName, string text)
         {

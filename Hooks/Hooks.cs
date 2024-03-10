@@ -1,6 +1,7 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 
 namespace TMZR_QA.Hooks
 {
@@ -8,6 +9,7 @@ namespace TMZR_QA.Hooks
     public sealed class Hooks
     {
         private readonly IObjectContainer _container;
+        private IWebDriver _driver = null;
 
         public Hooks(IObjectContainer container)
         {
@@ -23,10 +25,19 @@ namespace TMZR_QA.Hooks
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario()
         {
-            var options = new ChromeOptions();
-            //options.AddArgument("--headless=new");
-            IWebDriver driver = new ChromeDriver(options);
-            _container.RegisterInstanceAs(driver);
+            // TODO: Optimize & Organize Codes: // Create Test Runner and AppSettings
+
+            // Chrome Browser
+            var chromeOptions = new ChromeOptions();
+            //chromeOptions.AddArgument("--headless=new"); // Run Test in headless browser
+            _driver = new ChromeDriver(chromeOptions);
+            _container.RegisterInstanceAs(_driver, typeof(IWebDriver));
+
+            // Firefox Browser
+            /*var ffOptions = new FirefoxOptions();
+            //ffOptions.AddArgument("-headless"); // Run Test in headless browser
+            _driver = new FirefoxDriver(ffOptions);
+            _container.RegisterInstanceAs(_driver, typeof(IWebDriver));*/
         }
 
         [BeforeStep] public void FirstStep()

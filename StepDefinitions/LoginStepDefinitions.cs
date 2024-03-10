@@ -48,7 +48,7 @@ namespace TMZR_QA.StepDefinitions
             homePage.userIsLoggedIn();
         }
 
-        [Then(@"Field validation '([^']*)' should appear for Login Page '([^']*)' field")]
+        [Then(@"Field validation '(.*)' should appear for Login Page '(.*)' field")]
         public void ThenFieldValidationShouldAppearForLoginPageField(string message, string field)
         {
             loginPage.fieldValidationMessageDisplayed(message, field);
