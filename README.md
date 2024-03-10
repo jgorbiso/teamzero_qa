@@ -2,7 +2,7 @@
 
 **Useful Links**
 - [Homepage]('https://teamzeroweb.azurewebsites.net/')
-- [Translated Login]('https://teamzeroweb.azurewebsites.net/fil')
+- [Translated Homepage]('https://teamzeroweb.azurewebsites.net/fil')
 
 Registered Test Accounts:
 - tz-def-01@mailinator.com | P@ssw0rd
