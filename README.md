@@ -1,5 +1,9 @@
 # TeamZero Selenium SpecFlow Test Automation
 
 **Useful Links**
-- [Login]('http://localhost:3000/')
-- [Translated Login]('http://localhost:3000/')
+- [Homepage]('https://teamzeroweb.azurewebsites.net/')
+- [Translated Login]('https://teamzeroweb.azurewebsites.net/fil')
+
+Registered Test Accounts:
+- tz-def-01@mailinator.com | P@ssw0rd
+- tz_user01@mailinator.com | P@ssw0rd
